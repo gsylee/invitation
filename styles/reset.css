@@ -1,0 +1,26 @@
+body, ul, ol, dl, dd, h1, h2, h3, h4, h5, h6, p, blockquote, address, form, input, select, textarea, legend, fieldset, button, th, td { margin: 0; padding: 0; box-sizing: border-box; outline: none; vertical-align: baseline; }
+html { height: 100%; }
+body { font: .64rem helvetica;    /* overflow: hidden; */ position: fixed; -webkit-overflow-scrolling: touch; background: #FFF1F1;    /* box-sizing: border-box; */ -webkit-text-size-adjust: 100%; -webkit-touch-callout: none; height: 100%; }
+*:not(input, select, textarea) { -webkit-user-select: none; }
+a, input, textarea { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+button, input, textarea, select { -webkit-appearance: none; border: 0; font-size: 100%; }
+a:-webkit-any-link { color: #000; text-decoration: none; }
+a:active { outline: 0; }
+input { outline: none; vertical-align: middle; }
+img { border: none; vertical-align: middle; }
+ul { list-style: none; }
+
+/* 设置公共样式 */
+.left { float: left; }
+.right { float: right; }
+.clearfix::after { content: ""; display: block; visibility: hidden; height: 0; line-height: 0; clear: both; }
+
+/* 高亮显示 */
+.selected { border-bottom: .5px solid #F00;    /* background:rgba(0,0,0,.3); */ }
+
+/* 同样的字体颜色 */
+.same-color { color: rgb(202, 122, 122); }
+.same-size { font-size: .8rem; }
+
+/* 同样的上间距 */
+.same-margin { margin-top: .5rem; }

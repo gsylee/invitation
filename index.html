@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 添加智能 App 广告条 Smart App Banner（iOS 6+ Safari） -->
+    <meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL" />
+    <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <meta name="format-detection" content="telphone=no, email=no" />
+    <title>请柬</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/theme/theme0.css" id="theme" />
+    <script>
+        // 动态设置html元素的字体大小
+          (function (win) {
+                var doc = win.document;
+                var docEl = doc.documentElement;
+                var tid;
+
+                function refreshRem() {
+                    var width = docEl.getBoundingClientRect().width;
+                    if (width > 750) { // 最大宽度
+                        width = 750;
+                    }
+                    var rem = width / 15; //设置rem是屏幕宽度的十5之一
+                    docEl.style.fontSize = rem + 'px';
+                }
+
+                win.addEventListener('resize', function () {
+                    clearTimeout(tid);
+                    tid = setTimeout(refreshRem, 100);
+                }, false);
+                win.addEventListener('pageshow', function (e) {
+                    if (e.persisted) {
+                        clearTimeout(tid);
+                        tid = setTimeout(refreshRem, 100);
+                    }
+                }, false);
+
+                refreshRem();
+
+            })(window);
+    </script>
+</head>
+<body>
+    <!-- 翻书效果 -->
+    <img src="/images/cover1.png" id="page-turn" alt="cover"  class="add-img" />
+
+     <!-- 导航栏 -->
+   <div class="nav" id="nav">
+        <ul id="nav-ul">
+            <li class="selected">请柬</li>
+            <li>回应</li>
+            <li>祝福</li>
+        </ul>
+   </div>
+
+   <div class="wrap" >
+        <ul id="wrap-ul">
+            <!-- 请柬详情页面 -->
+            <li class="invatation">
+                <div class="same-margin">
+                    <span class="same-color same-size">
+                        亲爱的
+                    </span>
+                    <span class="same-size" id="name">张三疯</span>
+                    <!-- 视频内容 -->
+                    <div class="video ">
+                        <p>一个真诚的邀请您参加我的婚礼的视频</p>
+                        <div id="video-content" class="video-content">
+                            <video id="video-tag" src="/video/play.mp4" style="width:100%;  height:100%; object-fit: cover" controls="controls" poster="/images/timg.jpg">
+                                您的浏览器不支持最新的video播放器
+                            </video>
+                        </div>
+                    </div>
+              </div>
+        <!-- code -->
+        <div class="code">
+            <span class="same-color">邀请码:</span>
+            <span id="code" >MHL20385</span>
+        </div>
+        <!-- date -->
+        <div class="date same-margin clearfix">
+            <div class="left same-color">日期:</div>
+            <div class="left date-center">
+                <p id="new-date">新历 2017年5月1日</p>
+                <p id="old-date">农历 2017年4月初一</p>
+            </div>
+            <div class="left" id="what-day">(星期日)</div>
+        </div>
+        <!-- the wedding -->
+        <div class="the-wedding same-margin clearfix">
+            <div class="left same-color">为:</div>
+            <div class="left wedding-center">
+                <p>
+                    <span class="same-color">新郎:</span>
+                    <span id="groom">梁山伯</span>
+                </p>
+                <p>
+                    <span class="same-color">新娘:</span>
+                    <span id="bride">祝英台</span>
+                </p>
+            </div>
+            <div class="left">举办结婚喜宴</div>
+        </div>
+        <!-- time -->
+        <div class="time same-margin">
+            <span class="same-color">时间:</span>
+            <span id="time">中午12时</span>
+        </div>
+        <!-- adress -->
+        <div class="adress same-margin clearfix">
+            <div class="left same-color">地点:</div>
+            <div class="left" id="adress">福建省厦门市思明区立案前西路,牡丹大酒店302厅</div>
+        </div>
+        <!-- 地图显示 -->
+        <div class="top-map">
+            <div class="map" id="map" tabindex="0">
+                 
+            </div>
+            <div class="re-center" id="inCenter" ></div>
+        </div>
+        
+        <!-- 在地图中查看 -->
+            <button class="button-style" id="showInMap">
+                在地图中查看
+            </button>
+            <div class="empty-style"></div>
+         </li>
+            <li class="reply">
+                <!-- 填写反馈 -->
+                <div id="fill-reply">
+                    <div class="remind">
+                        <span class="same-color same-size">
+                            注意:
+                        </span>
+                        <p class="same-margin">
+                            这个反馈很重要,为了能让新郎更好的安排酒店定位，菜谱等,麻烦您尽可能准确地填写反馈, 反馈提交后,下载
+                            <span class="same-color same-size">&quot;婚礼现场&quot;</span>
+                            app可以更改您的反馈
+                        </p>
+                    </div>
+                        <!-- 表单数据 -->
+                        <form class="form spe-margin" >
+                            <p class="clearfix icon">
+                                <span class="left">能否到场:</span>
+                                <select  id="is-locale" class="right ">
+                                    <option value="1">能</option>
+                                    <option value="2">不确定</option>
+                                    <option value="3">不能</option>
+                                </select>
+                            </p>
+                            <p class="clearfix icon">
+                               <span class="left" >到场成人数:</span> 
+                                <select name="adult-count" id="adult-count" class="right">
+                                    <option value="1个">1个</option>
+                                    <option value="2个">2个</option>
+                                    <option value="3个">3个</option>
+                                    <option value="4个">4个</option>
+                                    <option value="5个">5个</option>
+                                    <option value="6个">6个</option>
+                                    <option value="7个">7个</option>
+                                    <option value="8个">8个</option>
+                                    <option value="9个">9个</option>
+                                    <option value="10个">10个</option>
+                                </select>
+                        
+                            </p>
+                            <p class=" clearfix icon">
+                                <span class="left">婴儿/儿童:</span> 
+                                <select name="child-count" id="child-count" class="right">
+                                    <!-- <option value="">请选择</option> -->
+                                    <option value="1个">1个</option>
+                                    <option value="2个">2个</option>
+                                    <option value="3个">3个</option>
+                                    <option value="4个">4个</option>
+                                    <option value="5个">5个</option>
+                                    <option value="6个">6个</option>
+                                    <option value="7个">7个</option>
+                                    <option value="8个">8个</option>
+                                    <option value="9个">9个</option>
+                                    <option value="10个">10个</option>
+                                </select>
+                            </p>
+                            <p class="clearfix icon ">
+                                <span class="left">预计到场日期:</span> 
+                                <input id="arrive-date" type="date"  class="right" value="2017-09-03" />
+                            </p>
+                            <p class="clearfix icon ">
+                                 <span class="left">预计到场时间:</span> 
+                                <input id="arrive-time"  type="time"  class="right" value="19:07" />
+                            </p>
+                            <!-- 留言 -->
+                            <textarea id="message"  class="blessing" placeholder="留言:"></textarea>
+                            <!-- <input type="submit" value="提交回应" class="button-style same-margin"  /> -->
+                            <button type="button" class="button-style same-margin" id="btn">提交回应</button>
+                        </form>
+                        <div class="empty-style"></div>
+                </div>
+                <!-- 显示反馈详情 -->
+                <div id="reply-info" style="display:none;" >
+                    <div class="remind">
+                        <span class="same-color same-size">
+                            注意:
+                        </span>
+                        <p class="same-margin">
+                            这个反馈很重要,为了能让新郎更好的安排酒店定位，菜谱等,麻烦您尽可能准确地填写反馈, 反馈提交后,下载
+                            <span class="same-color same-size">&quot;婚礼现场&quot;</span>
+                            app可以更改您的反馈
+                        </p>
+                    </div>
+                    <!-- 详情 -->
+                    <div class="reply-info-content">
+                        <!-- 能否到场 -->
+                        <div class="clearfix">
+                            <p class="left">
+                                能否到场
+                            </p>
+                            <span id="isLocale" class="right same-color">能</span>
+                        </div>
+                        <!-- 到场成人数 -->
+                        <div class="clearfix">
+                            <p class="left">到场成人数</p>
+                            <span id="adultCount" class="right same-color">1个</span>
+                        </div>
+                        <!-- 婴儿/儿童 -->
+                        <div class="clearfix">
+                            <p class="left">婴儿/儿童</p>
+                            <span id="childCount" class="right same-color">1个</span>
+                        </div>
+                        <div class="clearfix">
+                            <p class="left">预计到场时间</p>
+                            <span id="arriveDate" class="right same-color">2017-6-1</span>
+                        </div>
+                        <div class="clearfix">
+                            <p class="left">预计到场时间</p>
+                            <span class="right same-color" id="arriveTime">11:30</span>
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <span class="same-color">提示:</span>
+                        您已经反馈过啦!如果您需要重新反馈,请下载&quot;婚礼现场&quot;
+                        App,修改请柬反馈,并且可以在里面体验到观看婚礼直播,群聊发言,
+                        送小礼物等丰富精彩的功能,赶紧去下载吧!
+                    </div>
+                    <button type="button" class="button-style" id="re-reply" >重新回应</button>
+                </div>
+                <div class="empty-style"></div>
+            </li>
+            <li class="benison">
+                <div class="remind">
+            <span class="same-color same-size">注意:</span>
+            <p class="same-margin">
+                新郎新娘很时尚!已启用
+                <span class="same-color same-size">
+                    &quot;婚礼现场&quot;
+                </span>
+                 平台,支持线上礼金祝福哦,并且可以直接推送到婚礼现场大屏幕和新郎或 新娘钱包中~
+            </p>
+        </div>
+        <div class="video spe-margin">
+            <p>一个视频告诉你什么是礼金祝福!</p>
+            <div  class="video-content">
+                <video src="/video/play.mp4" style="width:100%; height:100%; object-fit: cover" controls="controls" poster="/images/timg.jpg">
+                    您的浏览器不支持最新的video播放器
+                </video>
+            </div>
+        </div>
+        <button class="button-style same-margin" id="sendGift">我要送礼金祝福</button>
+            </li>
+        </ul>
+   </div>
+
+   
+   <script src="/js/common.js"></script>
+   <script src="/js/index.js"></script>
+   <script src="/js/lunarTime.js" ></script>
+   <script src="https://webapi.amap.com/maps?v=1.4.3&amp;key=0d992314595e7d1ca368c45e5f172b4d"></script>
+
+</body>
+</html>

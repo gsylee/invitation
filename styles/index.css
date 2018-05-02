@@ -1,0 +1,215 @@
+/* 翻书效果 */
+.add-img{
+    width:100%;
+    height:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:100;
+}
+.cover {
+    /* -webkit-transform:translate(30px,20px); */
+    -webkit-transition: transform 2s;
+    -webkit-transform-origin-x: 0%;
+    -webkit-transform: rotateY(120deg);
+}
+
+/* 导航栏 */
+.nav{
+    display:none;
+    width:100%;
+    position:fixed;
+    z-index:1;
+    left:0;
+    top:0;
+    /* height:1.5rem; */
+    line-height:1.5rem;
+    background:rgb(245, 161, 161);
+    text-align:center;
+    /* border-bottom:1px solid #f8f8f8; */
+}
+.nav li{
+    float:left;
+    width:20%;
+    /* li没有设置固定高度：margin上下为正，反而是内容高度变少了
+        因此，这里的margin应该设置为负数，li高度才会变大
+    */
+    margin:-.5px 6.54%;
+    /* line-height:1.5rem; */
+}
+/* wrap */
+.wrap{
+    /* 导航栏定位后，不占据原来的文档流
+        有些内容会被覆盖，因此要设置一个上
+        间距
+    */
+    width:95%;
+    margin:2.5rem auto;
+    font-size:.5rem;
+    /* overflow:hidden; */
+}
+/* 用来隐藏另外两个选项卡页面的内容 */
+.reply,.benison{
+    display:none;
+}
+
+/* 请柬页面 */
+.video{
+    width:85%;
+    margin:.5rem auto;
+    text-align:center;
+}
+.video-content{
+    width:70%;
+    height:5rem;
+
+    margin:.3rem auto;
+    /* overflow:hidden; */
+}
+
+/* code */
+.code span:last-child{
+    padding-left:.4rem;
+}
+/* date */
+.date,.the-wedding{
+    height:2rem;
+}
+.date-center{
+    padding-left:1rem;
+    width:8rem;
+    height:2rem;
+    line-height:1rem;
+}
+.date div:first-child,
+.date div:last-child,
+.the-wedding div:first-child,
+.the-wedding div:last-child
+{
+    height:2rem;
+    line-height:2rem;
+}
+/* the-wedding */
+.wedding-center{
+    padding-left:1.5rem;
+    width:7rem;
+    height:2rem;
+    line-height:1rem;
+}
+/* time */
+.time span:last-child{
+    padding-left:.9rem;
+}
+/* adress */
+.adress div:last-child{
+    width:80%;
+    padding-left:.9rem;
+}
+.map{
+    width: 90%;
+    height:6rem;
+    margin:.5rem auto;
+    border:5px solid rgb(231, 177, 177);
+    position:relative;
+}
+/* 地图点击按钮 */
+.top-map{
+    position:relative;
+}
+.re-center{
+    width:.96rem;
+    height:.96rem;
+    position:absolute;
+    left: 1rem;
+    bottom:.2rem;
+    background:url(/images/toCenter.png) no-repeat center;
+    background-size:24px 24px;
+    z-index:50;
+}
+
+/* 隐藏高德地图这四个字和copyright */
+.amap-logo,
+.amap-copyright {
+    /* visibility: hidden; */
+    display:none; 
+}
+
+/* 在地图中查看 */
+.button-style{
+    font-size:.6rem;
+    width:70%;
+    display:block;
+    height:1.5rem;
+    line-height:1.5rem;
+    background:rgb(165, 99, 99);
+    color:#FFF;
+    border-radius:.2rem;
+    margin:.7rem auto;
+}
+
+
+/* 添加一个空的div */
+.empty-style{
+    height:1rem;
+    visibility: hidden;
+}
+
+/* 填写回应页面 */
+.remind p{
+    text-indent:1rem;
+}
+/* 不同的margin */
+.spe-margin{
+    margin-top:1rem;
+}
+
+.form p{
+    line-height:2rem;
+    border-top:2px solid rgba(255,255,255,.2);
+    border-bottom:2px solid rgba(255,255,255,.2);
+}
+.icon{
+   background:url(/images/right.png) no-repeat right 5px center;
+   background-size:16px 16px; 
+}
+.form select,.form input,.blessing{
+      line-height:inherit;
+      background-color:inherit;
+}
+.form select {
+    direction: rtl;
+    width:60%;
+    padding-right:1.1rem;
+}
+.form input{
+  padding-right:.4rem;
+  direction: rtl;
+  width:60%; 
+}
+
+.form .blessing{
+    width:95%;
+    height:6rem;
+    border-radius:.8rem;
+    border:1px solid rgb(204, 105, 98);
+    margin-top:.8rem;
+    padding:5px 0 0 5px;
+}
+
+/* 查看回复内容页面 */
+.reply-info-content{
+    width:95%;
+    margin:.5rem auto;
+}
+.reply-info-content div{
+    line-height:2rem;
+    padding-top:.2rem;
+    border-top:1px solid rgba(255,255,255,.5);
+    border-bottom:1px solid rgba(255,255,255,.7);
+}
+/* tip */
+.tip{
+    width:90%;
+    margin:1rem auto;
+    letter-spacing:1px;
+}
