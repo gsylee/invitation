@@ -28,11 +28,11 @@ function loadXMLDoc(method,url,cfunc,data,id){
     xmlhttp.onreadystatechange = cfunc;
     if(method == 'GET'){
         // console.log(url + "?invitationId=" + id);
-        xmlhttp.open("GET", url + "?invitationId=" + id , true);
+        xmlhttp.open("GET", url + "?id=" + id , true);
         xmlhttp.send();
     }else{
         xmlhttp.open("POST", url, true);
-        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=utf-8'); 
         xmlhttp.send(data);
     }
 }

@@ -1,11 +1,16 @@
 addLoadEvent(getData);
 // 把经度和纬度和请柬id为全局变量，后面会用到
 var longitude,latitude,id,invitationCardId;
+
+// 用户点击查看请柬的时候，会先根据请柬id，从服务器获取请柬页的详细信息
 function getData() {
     var old_url = location.href;
     // 获取到id值，然后通过id值向服务器发起请求，获取数据
-     id = old_url.substr(old_url.lastIndexOf("/") + 1);
-    var target_url = "/wedding/invitation/detail" ;
+    //  id = old_url.substr(old_url.lastIndexOf("/") + 1);
+     id = old_url.substring(old_url.lastIndexOf("=") + 1);
+     console.log(id);
+    // var target_url = "/wedding/invitation/detail" ;
+    var target_url = "/api/getData.php" ;
     // 调用ajax方法，向服务器发起请求，获取数据
     loadXMLDoc("GET",target_url,function(){
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
@@ -212,20 +217,23 @@ function sendFormData(){
             // console.log(estimateArriveTime);
             // 获取留言
             var message = getObj("message", 0).value;
+            console.log(id);
             var replyData = {
-                data : {
-                    id: id,
-                    feedbackStatus: feedbackStatus,
-                    adultCount: adultCount,
-                    childrenCount: childrenCount,
-                    estimateArriveTime: estimateArriveTime,
-                    message: message
-                }
+                   success: '数据发送成功',
+                   data: {
+                        id: id,
+                        feedbackStatus: feedbackStatus,
+                        adultCount: adultCount,
+                        childrenCount: childrenCount,
+                        estimateArriveTime: estimateArriveTime,
+                        message: message
+                   }
             };
              replyData = JSON.stringify(replyData);
+             console.log(replyData);
             //  发送表单数据
             //  
-            loadXMLDoc("POST", "/wedding/feedback/update", function () {
+            loadXMLDoc("POST", "/api/feedBack.php", function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
                     // 隐藏可填写的回应页面
                    getObj("fill-reply",0).style.display = "none";
